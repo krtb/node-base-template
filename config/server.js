@@ -3,7 +3,7 @@ import express from 'express';
 import { fileURLToPath } from 'url';
 import path, {dirname} from 'path';
 const app = express();
-// server port
+// server port number
 const PORT = 3000;
 
 // support serving static files. https://expressjs.com/en/starter/static-files.html
