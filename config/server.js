@@ -1,11 +1,18 @@
 import express from 'express';
- 
+// https://stackoverflow.com/questions/64383909/dirname-is-not-defined-in-node-14-version
+import { fileURLToPath } from 'url';
+import path, {dirname} from 'path';
 const app = express();
- 
-app.listen(3000, () =>
-  console.log('Example app listening on port 3000!'),
-);
+// server port
+const PORT = 3000;
 
-app.get('/', (req,res)=>{
-  res.send('hello world!')
-})
+// support serving static files. https://expressjs.com/en/starter/static-files.html
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+app.use('/static', express.static(path.join(__dirname, 'public')))
+
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
+
+app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
