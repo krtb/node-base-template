@@ -21,6 +21,11 @@
 ## Developer Info
 - Will always run on the latest pulic release of Node, and associated dependencies. 
   - Tested on `Node v16.13.0`
+- Stack
+  - Node
+  - Express
+  - Nodemon
+  - Babel
 
 
 
